@@ -1,57 +1,177 @@
+/* Container styling */
 .container {
-    padding: 20px;
-    margin-left: 0px ;
-    margin-top: 120px;
-    border-radius: 8px; 
-    background-color: #f1f3f5; /* Card background color */
-    border: 1px solid #e0e0e0; /* Card border */
-  }
-.stats-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .stat-card {
-    background-color: #f8f9fa; /* Card background color */
-    border: 1px solid #e0e0e0; /* Card border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px ; /* Padding inside the card */
-    text-align: center; /* Center align text */
-    flex: 1; /* Flex-grow to take equal space */
-    margin: 0 10px; /* Margin between cards */
-    transition: transform 0.2s; /* Animation on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
-  }
-  .icon {
-    float: left;
-    margin-left: 20px;
-    font-size: 40px; /* Adjust icon size */
-    color: #0747A6; /* Change icon color if desired */
-  }
-  
-  .info {
-    float: right;
-    text-align: center;
-  }
-  
-  h4 {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 24px;
-    color: #090909;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .stats-container {
-      flex-direction: column; /* Stack cards on smaller screens */
-    }
-  
-    .stat-card {
-      margin-bottom: 20px; /* Bottom margin for cards when stacked */
-    }
-  }
+  max-width: 1200px;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+/* Header text styling */
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Section title styling */
+h4 {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Dropdown styling */
+.dropdown .btn-outline-secondary {
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Time period button group */
+.btn-group .btn {
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.btn-group .btn-primary {
+  color: #fff;
+  background-color: #004085;
+}
+
+/* Card styling */
+.card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+  margin: 0;
+}
+
+.card p.font-weight-bold {
+  font-size: 16px;
+  color: #555;
+}
+
+.card p.display-4 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Layout for cards under sections */
+.card-container {
+  margin-top: 20px;
+}
+
+.card-section {
+  margin-bottom: 20px;
+}
+
+/* Prompt section styling */
+.prompt-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  width: 80%;
+  margin: 30px auto;
+}
+
+
+.btn-group .btn {
+  border-radius: 15px;
+  font-weight: 500;
+  padding: 8px 16px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #004085;
+}
+
+.btn-light {
+  color: #215283;
+  background-color: #f8f9fa;
+}
+
+/* AI Assisstant container */
+.ai-assistant-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #b6afaf;
+  margin-left: 100px;
+  border-radius: 50%; /* Makes the container round */
+  transition: background-color 0.3s, transform 0.3s;
+  font-family: 'Poppins', sans-serif;
+  width: 60px; /* Ensures a circular shape */
+  height: 60px; /* Ensures a circular shape */
+  text-align: center;
+}
+
+.ai-assistant-container img {
+  width: 50px;
+  height: 50px;
+}
+
+.ai-assistant-container span {
+  font-size: 15px;
+  color: #333;
+  font-weight: 600;
+  display: none; /* Hides text by default due to circular shape */
+}
+
+.ai-assistant-container:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ai-assistant-container:hover span {
+  display: block; /* Optionally show text on hover */
+  position:absolute; /* Change if you want text overlay behavior */
+  bottom: -30px; /* Adjust based on placement needs */
+}
+
+
+
+/* Container for the prompt section */
+.prompt-container {
+  background-color: #f1f1f1; /* Light gray background color */
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  margin: 0 auto; /* Center the container horizontally */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: flex;
+}
+
+.form-control {
+  min-width: 500px;
+  width: 60%; /* Adjust the width as needed */
+  height: 60px;
+  border-radius: 15px 0 0 15px;
+}
+
+.btn-primary {
+  border-radius: 15px 15px 15px 15px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-left: none;
+  padding: 0 15px;
+}

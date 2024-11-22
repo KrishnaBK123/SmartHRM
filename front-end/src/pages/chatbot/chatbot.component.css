@@ -1,0 +1,157 @@
+.chatbot {
+    max-width: 900px;
+    width: 100%;
+    margin-left: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column; /* Ensures child elements stack vertically */
+    background-color: #F5F5F5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px; /* Adds margin around the entire chatbot */
+  }
+  
+  .chatbot-header {
+    background-color: #0747A6;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px 5px 0 0; /* Rounded corners for the top */
+  }
+  
+  .chatbot-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .chatbot-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .chatbot-body {
+    flex: 1; /* Expands to take remaining space */
+    padding: 20px;
+    overflow-y: auto; /* Enables vertical scrolling */
+  }
+  
+  .message-container {
+    margin-bottom: 15px;
+  }
+  
+  .message-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .bot-message,
+  .user-message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    max-width: 80%;
+  }
+  
+  .bot-message {
+    background-color: #b5b1b1;
+    text-align: left;
+  }
+  
+  .user-message {
+    background-color: #d1e7ff;
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  .response-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .response-table th,
+  .response-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .prompt-container {
+    background-color: #f1f1f1; /* Light gray background color */
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 10px; /* Adds space between the last message and input area */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  
+  .input-group {
+    display: flex;
+  }
+  
+  .form-control {
+    min-width: 300px;
+    width: 60%; /* Adjust the width as needed */
+    height: 60px;
+    border-radius: 15px 0 0 15px;
+  }
+  
+  .btn-primary {
+    border-radius: 15px 15px 15px 15px;
+    width: 60%; /* Adjust the width as needed */
+    height: 60px;
+    border-radius: 0 14px 14px 0;
+    background-color: #0747A6;
+    color: white;
+    border-left: none;
+    padding: 0 15px;
+  }
+  
+
+  .edit-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+  }
+  
+  .edit-btn:hover {
+    text-decoration: underline;
+  }
+  
+  .message-wrapper {
+    margin-bottom: 10px;
+  }
+  
+  .user-message {
+    text-align: right;
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .bot-message {
+    text-align: left;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  

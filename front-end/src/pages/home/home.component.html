@@ -1,35 +1,107 @@
 <div class="container">
-  <h1>Welcome, HR!</h1>
-  <br>
-  <div class="stats-container">
-    <div class="stat-card">
-      <div class="icon">
-        <i class="fas fa-users"></i>
-      </div>
-      <div class="info">
-        <h4>Total Clients</h4>
-        <p>{{ totalClients }}</p>
-      </div>
+  <div class="text-center mt-3">
+    <h2>Welcome, Username!</h2>
+  </div>
+
+ <!-- First Card Section -->
+<div class="card p-4 my-4">
+  <h4>Master</h4>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <!-- Dropdown for Clients -->
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Clients Name
+      </button>
+      <ul class="dropdown-menu">
+        <li *ngFor="let client of clientsList">
+          <a class="dropdown-item">{{ client.name }}</a>
+        </li>
+      </ul>
     </div>
 
-    <div class="stat-card">
-      <div class="icon">
-        <i class="fas fa-file-alt"></i>
-      </div>
-      <div class="info">
-        <h4>Total Resumes</h4>
-        <p>{{ totalResumes }}</p>
+    <!-- Tabs for Daily, Weekly, and Monthly in First Card -->
+    <div class="btn-group">
+      <button class="btn" [ngClass]="{'btn-primary': selectedTabSecondCard === 'today', 'btn-outline-primary': selectedTabSecondCard !== 'today'}" (click)="selectTab('today', 'second')">Today</button>
+      <button class="btn" [ngClass]="{'btn-primary': selectedTabSecondCard === 'thisWeek', 'btn-outline-primary': selectedTabSecondCard !== 'thisWeek'}" (click)="selectTab('thisWeek', 'second')">This Week</button>
+      <button class="btn" [ngClass]="{'btn-primary': selectedTabSecondCard === 'thisMonth', 'btn-outline-primary': selectedTabSecondCard !== 'thisMonth'}" (click)="selectTab('thisMonth', 'second')">This Month</button>
+      <button class="btn" [ngClass]="{'btn-primary': selectedTabSecondCard === 'all', 'btn-outline-primary': selectedTabSecondCard !== 'all'}" (click)="selectTab('all', 'second')">All</button>
+    </div>
+  </div>
+
+  <!-- Row Content -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card text-center p-4">
+        <p class="font-weight-bold">Clients</p>
+        <p class="display-4">{{ clientCount }}</p>
       </div>
     </div>
-    
-    <div class="stat-card">
-      <div class="icon">
-        <i class="fas fa-file-signature"></i>
+    <div class="col-md-4">
+      <div class="card text-center p-4">
+        <p class="font-weight-bold">Requirement</p>
+        <p class="display-4">{{ requirementCount }}</p>
       </div>
-      <div class="info">
-        <h4>Total JDs</h4>
-        <p>{{ totalJDs }}</p>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center p-4">
+        <p class="font-weight-bold">Candidate</p>
+        <p class="display-4">{{ candidateCount }}</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Card Section -->
+<div class="card p-4 my-4">
+  <h4>Master</h4>
+  <div class="d-flex justify-content-end align-items-center mb-3">
+    <!-- Tabs for Daily, Weekly, and Monthly in Second Card -->
+    <div class="btn-group">
+      <button class="btn" [ngClass]="{'btn-primary': selectedTabSecondCard === 'today', 'btn-outline-primary': selectedTabSecondCard !== 'today'}" (click)="selectTab('today', 'second')">Today</button>
+      <button class="btn" [ngClass]="{'btn-primary': selectedTabSecondCard === 'thisWeek', 'btn-outline-primary': selectedTabSecondCard !== 'thisWeek'}" (click)="selectTab('thisWeek', 'second')">This Week</button>
+      <button class="btn" [ngClass]="{'btn-primary': selectedTabSecondCard === 'thisMonth', 'btn-outline-primary': selectedTabSecondCard !== 'thisMonth'}" (click)="selectTab('thisMonth', 'second')">This Month</button>
+      <button class="btn" [ngClass]="{'btn-primary': selectedTabSecondCard === 'all', 'btn-outline-primary': selectedTabSecondCard !== 'all'}" (click)="selectTab('all', 'second')">All</button>
+    </div>
+  </div>
+
+  <!-- Row Content -->
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card text-center p-4">
+        <p class="font-weight-bold">Received</p>
+        <p class="display-4">{{ receivedResumes }}</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center p-4">
+        <p class="font-weight-bold">Processed</p>
+        <p class="display-4">{{ processedResumes }}</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center p-4">
+        <p class="font-weight-bold">Shortlisted</p>
+        <p class="display-4">{{ shortlistedResumes }}</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center p-4">
+        <p class="font-weight-bold">Sent to client</p>
+        <p class="display-4">{{ sentToClientResumes }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="ai-assistant-container" (click)="openChatbot()">
+    <img src="assets/chatboot.webp" alt="AI Assistant">
+    <span>AI Assistant</span>
+  </div>
+  
+  <div class="prompt-container d-flex justify-content-center align-items-center my-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Enter the prompt" [(ngModel)]="prompt" style="height: 60px; border-radius: 15px  0px 0px 15px;">
+      <button class="btn btn-primary generate-btn" type="button" (click)="openChatbot()" style="width:100px; height: 60px; border-radius: 0px 14px 14px 0px ;">Generate</button>
     </div>
   </div>
 </div>

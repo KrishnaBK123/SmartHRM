@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from '../pages/layout/layout.component';
 import { HomeComponent } from '../pages/home/home.component';
+import { ChatbotComponent } from '../pages/chatbot/chatbot.component';
 import { ResumelistComponent } from '../pages/resumelist/resumelist.component';
 import { QuestionerComponent } from '../pages/questioner/questioner.component';
 import { ResumeUploadComponent } from '../pages/resume-upload/resume-upload.component';
@@ -28,6 +29,13 @@ export const routes: Routes = [
                 component:HomeComponent,
                 title:'Home'
             },
+
+            {
+                path:'chatbot',
+                component:ChatbotComponent,
+                title:'Chatbot'             
+             },
+
             {
                 path:'resumelist',
                 component:ResumelistComponent,
